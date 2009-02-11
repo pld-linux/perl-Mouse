@@ -7,13 +7,13 @@
 Summary:	Mouse - Moose minus the antlers
 #Summary(pl.UTF-8):	
 Name:		perl-Mouse
-Version:	0.14
+Version:	0.16
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/S/SA/SARTAK/Mouse-0.14.tar.gz
-# Source0-md5:	3980508cd94135d078d70106634b8029
+Source0:	http://www.cpan.org/modules/by-authors/id/S/SA/SARTAK/%{pdir}-%{version}.tar.gz
+# Source0-md5:	90f0fb90430d245d68a6cee3c8e21c9a
 URL:		http://search.cpan.org/dist/Mouse/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -52,6 +52,7 @@ a few expert-level features.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{perl_vendorlib}/MouseX
 
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
