@@ -5,40 +5,38 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Mouse
 Summary:	Mouse - Moose minus the antlers
-#Summary(pl.UTF-8):	
+#Summary(pl.UTF-8):
 Name:		perl-Mouse
-Version:	0.17
+Version:	0.24
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/S/SA/SARTAK/%{pdir}-%{version}.tar.gz
-# Source0-md5:	b7be6042224bc24f9a4f28e9c89c72de
+Source0:	http://www.cpan.org/modules/by-module/Mouse/%{pdir}-%{version}.tar.gz
+# Source0-md5:	ec7d576027f4a8f01a4fb0c847a19524
 URL:		http://search.cpan.org/dist/Mouse/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl(Class::Method::Modifiers) >= 1.01
-BuildRequires:	perl-MRO-Compat
-BuildRequires:	perl-Sub-Exporter
-BuildRequires:	perl-Test-Exception
+BuildRequires:	perl-ExtUtils-MakeMaker >= 6.42
+BuildRequires:	perl-Test-Exception >= 0.21
+BuildRequires:	perl-Test-Simple >= 0.8
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-L<Moose> is wonderful.
+Moose is wonderful. Use Moose instead of Mouse.
 
 Unfortunately, it's a little slow. Though significant progress has
 been made over the years, the compile time penalty is a non-starter
 for some applications.
 
 Mouse aims to alleviate this by providing a subset of Moose's
-functionality, faster. In particular, L<Moose/has> is missing only
-a few expert-level features.
+functionality, faster. In particular, L<Moose/has> is missing only a
+few expert-level features.
 
 # %description -l pl.UTF-8
-# TODO
 
 %prep
 %setup -q -n %{pdir}-%{version}
