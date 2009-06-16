@@ -12,7 +12,7 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Mouse/%{pdir}-%{version}.tar.gz
+Source0:	http://search.cpan.org/CPAN/authors/id/S/SA/SARTAK/%{pdir}-%{version}.tar.gz
 # Source0-md5:	ec7d576027f4a8f01a4fb0c847a19524
 URL:		http://search.cpan.org/dist/Mouse/
 BuildRequires:	perl-devel >= 1:5.8.0
