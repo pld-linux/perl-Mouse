@@ -7,13 +7,13 @@
 Summary:	Mouse - Moose minus the antlers
 #Summary(pl.UTF-8):
 Name:		perl-Mouse
-Version:	0.28
+Version:	0.50
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/S/SU/SUNNAVY/%{pdir}-%{version}.tar.gz
-# Source0-md5:	44131d442479efe442abc713248249ae
+Source0:	http://www.cpan.org/CPAN/authors/id/G/GF/GFUJI/%{pdir}-%{version}.tar.gz
+# Source0-md5:	529bd5241135c1dae8c382bb123bd586
 URL:		http://search.cpan.org/dist/Mouse/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -22,7 +22,6 @@ BuildRequires:	perl-ExtUtils-MakeMaker >= 6.42
 BuildRequires:	perl-Test-Exception >= 0.21
 BuildRequires:	perl-Test-Simple >= 0.8
 %endif
-BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -61,8 +60,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes
-%{perl_vendorlib}/*.pm
-%{perl_vendorlib}/Mouse/
 %{perl_vendorlib}/MouseX/
-%{perl_vendorlib}/Squirrel/
+%{perl_vendorarch}/*.pm
+%{perl_vendorarch}/Mouse/
+%{perl_vendorarch}/Squirrel/
+%{perl_vendorarch}/Test/*.pm
+%dir %{perl_vendorarch}/auto/%{pdir}
+%attr(755,root,root) %{perl_vendorarch}/auto/%{pdir}/*.so
 %{_mandir}/man3/*
