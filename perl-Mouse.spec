@@ -7,13 +7,13 @@
 Summary:	Mouse - Moose minus the antlers
 #Summary(pl.UTF-8):
 Name:		perl-Mouse
-Version:	0.50
-Release:	2
+Version:	0.97
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/CPAN/authors/id/G/GF/GFUJI/%{pdir}-%{version}.tar.gz
-# Source0-md5:	529bd5241135c1dae8c382bb123bd586
+Source0:	http://search.cpan.org/CPAN/authors/id/G/GF/GFUJI/%{pdir}-%{version}.tar.gz
+# Source0-md5:	92a8b387f9619d32bce6685c1dd370e5
 URL:		http://search.cpan.org/dist/Mouse/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
