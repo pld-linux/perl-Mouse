@@ -8,7 +8,7 @@ Summary:	Mouse - Moose minus the antlers
 #Summary(pl.UTF-8):
 Name:		perl-Mouse
 Version:	0.97
-Release:	2
+Release:	3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
