@@ -5,22 +5,23 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Mouse
 Summary:	Mouse - Moose minus the antlers
-#Summary(pl.UTF-8):
 Name:		perl-Mouse
-Version:	0.97
-Release:	4
+Version:	2.3.0
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/G/GF/GFUJI/%{pdir}-%{version}.tar.gz
-# Source0-md5:	92a8b387f9619d32bce6685c1dd370e5
+# Source0-md5:	aae2b55f280f773a92fa16c6bdcc358d
 URL:		http://search.cpan.org/dist/Mouse/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	perl-Module-Build-XSUtil
 %if %{with tests}
 BuildRequires:	perl-ExtUtils-MakeMaker >= 6.42
 BuildRequires:	perl-Test-Exception >= 0.21
 BuildRequires:	perl-Test-Simple >= 0.8
+BuildRequires:	perl-Test-LeakTrace
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -35,24 +36,24 @@ Mouse aims to alleviate this by providing a subset of Moose's
 functionality, faster. In particular, L<Moose/has> is missing only a
 few expert-level features.
 
-# %description -l pl.UTF-8
-
 %prep
 %setup -q -n %{pdir}-%{version}
 
 %build
-%{__perl} Makefile.PL \
-	INSTALLDIRS=vendor
-%{__make}
+%{__perl} Build.PL \
+        destdir=$RPM_BUILD_ROOT \
+	installdirs=vendor
 
-%{?with_tests:%{__make} test}
+./Build \
+	CFLAGS="%{rpmcflags}"
+
+%{?with_tests:./Build test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{perl_vendorlib}/MouseX
 
-%{__make} pure_install \
-	DESTDIR=$RPM_BUILD_ROOT
+./Build install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
