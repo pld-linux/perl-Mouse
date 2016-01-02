@@ -6,13 +6,13 @@
 %define	pdir	Mouse
 Summary:	Mouse - Moose minus the antlers
 Name:		perl-Mouse
-Version:	2.3.0
-Release:	3
+Version:	2.4.5
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/G/GF/GFUJI/%{pdir}-%{version}.tar.gz
-# Source0-md5:	aae2b55f280f773a92fa16c6bdcc358d
+Source0:	http://search.cpan.org/CPAN/authors/id/S/SY/SYOHEX/%{pdir}-v%{version}.tar.gz
+# Source0-md5:	2183f5bc16c7d37df5cf1dacf8ef88a1
 URL:		http://search.cpan.org/dist/Mouse/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -37,7 +37,7 @@ functionality, faster. In particular, L<Moose/has> is missing only a
 few expert-level features.
 
 %prep
-%setup -q -n %{pdir}-%{version}
+%setup -q -n %{pdir}-v%{version}
 
 %build
 %{__perl} Build.PL \
