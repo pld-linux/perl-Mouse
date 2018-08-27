@@ -6,13 +6,13 @@
 %define	pdir	Mouse
 Summary:	Mouse - Moose minus the antlers
 Name:		perl-Mouse
-Version:	2.4.9
+Version:	2.5.6
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/S/SY/SYOHEX/%{pdir}-v%{version}.tar.gz
-# Source0-md5:	cf46d1c3a7b4a42eea472165e5837316
+Source0:	http://search.cpan.org/CPAN/authors/id/S/SK/SKAJI/%{pdir}-v%{version}.tar.gz
+# Source0-md5:	1e19104c58009137d715af8e919a3a7c
 URL:		http://search.cpan.org/dist/Mouse/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -20,6 +20,7 @@ BuildRequires:	perl-Module-Build-XSUtil
 %if %{with tests}
 BuildRequires:	perl-ExtUtils-MakeMaker >= 6.42
 BuildRequires:	perl-Test-Exception >= 0.21
+BuildRequires:	perl-Test-Requires
 BuildRequires:	perl-Test-Simple >= 0.8
 BuildRequires:	perl-Test-LeakTrace
 %endif
