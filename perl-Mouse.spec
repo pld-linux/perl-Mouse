@@ -6,13 +6,13 @@
 Summary:	Mouse - Moose minus the antlers
 Summary(pl.UTF-8):	Mouse - Moose minus poroże
 Name:		perl-Mouse
-Version:	2.5.10
-Release:	4
+Version:	2.5.11
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/S/SK/SKAJI/%{pdir}-v%{version}.tar.gz
-# Source0-md5:	0dd19d703e14af71d723ba787d631858
+# Source0-md5:	dba20a13b713c890035e9055cec1384d
 URL:		https://metacpan.org/dist/Mouse
 BuildRequires:	perl-Devel-PPPort >= 3.42
 BuildRequires:	perl-ExtUtils-ParseXS >= 3.22
@@ -62,7 +62,7 @@ Moose/has brakuje tylko kilku funkcji używanych przez ekspertów.
 
 %build
 %{__perl} Build.PL \
-        destdir=$RPM_BUILD_ROOT \
+	destdir=$RPM_BUILD_ROOT \
 	installdirs=vendor
 
 ./Build \
