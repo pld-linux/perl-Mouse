@@ -6,13 +6,13 @@
 Summary:	Mouse - Moose minus the antlers
 Summary(pl.UTF-8):	Mouse - Moose minus poroże
 Name:		perl-Mouse
-Version:	2.6.1
+Version:	2.6.2
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	https://www.cpan.org/modules/by-authors/id/S/SK/SKAJI/%{pdir}-v%{version}.tar.gz
-# Source0-md5:	34994f3d16346df1c409afc75a3d1488
+Source0:	https://www.cpan.org/modules/by-authors/id/S/SY/SYOHEX/%{pdir}-v%{version}.tar.gz
+# Source0-md5:	75d9f50f42655e755f016d3e48c58a03
 URL:		https://metacpan.org/dist/Mouse
 BuildRequires:	perl-Devel-PPPort >= 3.42
 BuildRequires:	perl-ExtUtils-ParseXS >= 3.22
